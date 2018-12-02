@@ -38,5 +38,5 @@ else
     echo "<script>alert('File upload Unsuccessfull!')</script>";
     
 }	
-echo "aaaaa<script>window.location.replace('http://localhost/filezapp/phpfinal/uploadimage.php');</script>";
+echo "aaaaa<script>window.location.replace('http://localhost/bitBox/uploadimage.php');</script>";
 ?>

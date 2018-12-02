@@ -64,8 +64,25 @@
 
 <?php
 session_start();
-?>
+
+$isTouch = isset($_GET['u']);
+if($isTouch)
+{
+if($_GET['u']=="a")
+    {
+        echo "<script>alert('User added successfully')</script>";
+    }
+  }
+  ?>
 <?php
+$isTouch = isset($_GET['u']);
+if($isTouch)
+{
+if($_GET['u']=="e")
+    {
+        echo "<script>alert('Username already exists')</script>";
+    }
+  }
 $isTouch = isset($_SESSION['check']);
 
 if($isTouch == true)
@@ -79,7 +96,8 @@ if($isTouch == true)
 ?>
 
 </head>
-<body>
+<body onload="noBack();" 
+	    onpageshow="if (event.persisted) noBack();" onunload="">
 
 
 <div class="color-line"></div>
@@ -108,7 +126,7 @@ if($isTouch == true)
             <div class="col-md-4 col-md-4 col-sm-4 col-xs-12">
                 <div class="text-center m-b-md custom-login" style="color: aliceblue">
                     <h3>PLEASE LOGIN TO APP</h3>
-                    <p>This is the best app ever!</p>
+                    <p></p>
                 </div>
                 <div class="hpanel">
                     <div class="panel-body">
@@ -130,7 +148,7 @@ if($isTouch == true)
                             <input class="btn btn-success btn-block loginbtn" type="submit" value="login"/>
                             
                         </form>
-               <a class="btn btn-default btn-block" href="register.html">Sign Up!</a>
+               <a class="btn btn-default btn-block" href="register2.php">Sign Up!</a>
                     </div>
                 </div>
             </div>
@@ -142,6 +160,12 @@ if($isTouch == true)
             </div>
         </div>
     </div>
+
+    <SCRIPT type="text/javascript">
+    	window.history.forward();
+	    function noBack() { window.history.forward(); }
+    </SCRIPT>
+    
 
     <!-- jquery
 		============================================ -->

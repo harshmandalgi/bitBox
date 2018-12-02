@@ -59,9 +59,32 @@
     <!-- modernizr JS
 		============================================ -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <script>
+      var check = function() {
+        //alert("fu");
+    if (document.getElementById('password').value ==
+    document.getElementById('password1').value) {
+    document.getElementById('message').style.color = 'green';
+    document.getElementById('message').innerHTML = 'matching';
+    } else {
+    document.getElementById('message').style.color = 'red';
+    document.getElementById('message').innerHTML = 'not matching';
+    }
+  }
+    </script>
 </head>
 
 <body>
+<?php
+$isTouch = isset($_GET['u']);
+if($isTouch)
+{
+if($_GET['u']=="e")
+    {
+        echo "<script>alert('Username already exists')</script>";
+    }
+  }
+  ?>
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -86,19 +109,19 @@
                 </div>
                 <div class="hpanel">
                     <div class="panel-body">
-                        <form action="#" id="loginForm">
+                        <form  action="register1.php" id="loginForm" method="POST">
                             <div class="row">
                                 <div class="form-group col-lg-12">
                                     <label>Username</label>
-                                    <input class="form-control">
+                                    <input class="form-control" name="username">
                                 </div>
                                 <div class="form-group col-lg-6">
                                     <label>Password</label>
-                                    <input type="password" class="form-control">
+                                    <input type="password" class="form-control" name="password" id="password" onkeyup='check();'>
                                 </div>
                                 <div class="form-group col-lg-6">
-                                    <label>Repeat Password</label>
-                                    <input type="password" class="form-control">
+                                    <label id="message11">Repeat Password</label> <span id='message'></span>
+                                    <input type="password" class="form-control" name="password1" id="password1" onkeyup='check();'>
                                 </div>
                                 <div class="checkbox col-lg-12">
                                     
@@ -106,7 +129,7 @@
                             </div>
                             <div class="text-center">
                                 <button class="btn btn-success loginbtn">Register</button>
-                                <button class="btn btn-default">Cancel</button>
+                                
                             </div>
                         </form>
                     </div>

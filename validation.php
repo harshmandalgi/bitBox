@@ -11,11 +11,11 @@ if($num==1)
 {
 $_SESSION['username']=$username;
 $_SESSION['check']="valid";
-header('location:http://localhost/filezapp/phpfinal/index1.php');
+header('location:http://localhost/bitBox/index1.php');
 }
 else
 {
     $_SESSION['check']="invalid";
-    header('location:http://localhost/filezapp/phpfinal/index.php');
+    header('location:http://localhost/bitBox/index.php');
 }	
 ?>
