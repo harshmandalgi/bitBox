@@ -97,7 +97,7 @@ session_start();
                 <nav class="sidebar-nav left-sidebar-menu-pro">
                     <ul class="metismenu" id="menu1">
                         <li class="active">
-                            <a class="has-arrow" href="index.html">
+                            <a class="has-arrow" href="index1.php ">
 								   <i class="icon nalika-home icon-wrap"></i>
 								   <span class="mini-click-non">Data</span>
 								</a>
@@ -179,7 +179,7 @@ session_start();
                                                            <!-- <li class="active"><a data-toggle="tab" href="#Notes">News</a>
                                                             </li>
 -->
-                                                            <li><a data-toggle="tab" href="#Settings">Settings</a>
+                                                            <li><a  href="share.php">Share</a>
                                                             </li>
 
                                                             <li><a  href="logout.php">Logout</a>

@@ -9,7 +9,7 @@ session_start();
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>bitBox User Dashboard</title>
+    <title>bitBox User Dashboard - Share Content</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
@@ -179,7 +179,7 @@ session_start();
                                                            <!-- <li class="active"><a data-toggle="tab" href="#Notes">News</a>
                                                             </li>
 -->
-                                                            <li><a href="share.php">Share</a>
+                                                            <li><a data-toggle="tab" href="#Settings">Settings</a>
                                                             </li>
 
                                                             <li><a  href="logout.php">Logout</a>
@@ -220,25 +220,17 @@ session_start();
 											<div class="breadcomb-icon">
 												<i class="icon nalika-home"></i>
 											</div>
-											<div class="breadcomb-ctn" >
-												<h2>User Dashboard - Notes</h2>
-                                                <p>Welcome to bitBox <span class="bread-ntd">File Manager</span></p>
-                                                <br/><br/>
-                                            <?php
+											<div class="breadcomb-ctn"  style="color:white">
+												<h2>User Dashboard - Upload Image</h2>
+                                                <p>Welcome to bitBox <span class="bread-ntd">File Manager</span></p><br/><br/><br/>
+                                                <form action="shared.php" method="post" enctype="multipart/form-data">
+                                                Enter name of files to be shared (seperate with comma for multiple names): <input type="text" id="filename_s" name="filename_s" style="color:black" /><br/><br/>
+                                                Enter format of in same order ("i=image, v=video, n=notes" *seperate with comma for multiple inputs): <input type="text" id="formats" name="formats" style="color:black" /><br/><br/>
+                                                Enter name of users (seperate with comma for multiple names): <br/>
+                                                <input type="text" id="names" name="names" style="color:black" />
+                                                <input style="color:black" type="submit" value="Share" name="submit">
+        </form>
 
-$username=$_SESSION['username'];
-
-$con=mysqli_connect("localhost","root","");
-mysqli_select_db($con,"oslab_phpex1");
-$q="select * from data where username='$username'&& type='n'";
-$result=mysqli_query($con,$q);
-$num=mysqli_num_rows($result);
-for ($x = 0; $x <= $num; $x++) {
-    while ($row = $result->fetch_assoc()) {
-        echo "<a target='blank' href=".'uploads_public/'.$row['filename'].">".$row['filename']."</a>"."<br>";
-    }
-} 
-?>
 											</div>
 										</div>
                                     </div>
@@ -254,6 +246,9 @@ for ($x = 0; $x <= $num; $x++) {
                 </div>
             </div>
         </div>
+
+
+        
 
 
 

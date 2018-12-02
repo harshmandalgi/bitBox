@@ -25,7 +25,7 @@ if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
 
 $con=mysqli_connect("localhost","root","");
 mysqli_select_db($con,"oslab_phpex1");
-$q="insert into `data`(`filename`,`username`,`type`) values ('".$_FILES["fileToUpload"]['name']."','".$username."','v')";
+$q="insert into `data` values ('".$_FILES["fileToUpload"]['name']."','".$username."','v','-o')";
 $result=mysqli_query($con,$q);
 
 if($result)

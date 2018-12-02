@@ -179,7 +179,7 @@ session_start();
                                                            <!-- <li class="active"><a data-toggle="tab" href="#Notes">News</a>
                                                             </li>
 -->
-                                                            <li><a data-toggle="tab" href="#Settings">Settings</a>
+                                                            <li><a  href="share.php">Share</a>
                                                             </li>
 
                                                             <li><a  href="logout.php">Logout</a>
